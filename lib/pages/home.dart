@@ -9,30 +9,32 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: appBar(),
       body: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.only(left: 20, right: 20, top: 40),
-            child: TextField(
-              decoration: InputDecoration(
-                  fillColor: Colors.white,
-                  filled: true,
-                  contentPadding: EdgeInsets.all(15),
-                  hintText: 'Search Pancake',
-                  hintStyle: TextStyle(color: Color(0xffDDDADA), fontSize: 14),
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: SvgPicture.asset('assets/icons/Search.svg'),
-                  ),
-                  suffixIcon: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: SvgPicture.asset('assets/icons/Filter.svg'),
-                  ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide.none)),
+        children: [_searchField()],
+      ),
+    );
+  }
+
+  Container _searchField() {
+    return Container(
+      margin: EdgeInsets.only(left: 20, right: 20, top: 40),
+      child: TextField(
+        decoration: InputDecoration(
+            fillColor: Colors.white,
+            filled: true,
+            contentPadding: EdgeInsets.all(15),
+            hintText: 'Search Pancake',
+            hintStyle: TextStyle(color: Color(0xffDDDADA), fontSize: 14),
+            prefixIcon: Padding(
+              padding: const EdgeInsets.all(12),
+              child: SvgPicture.asset('assets/icons/Search.svg'),
             ),
-          )
-        ],
+            suffixIcon: Padding(
+              padding: const EdgeInsets.all(12),
+              child: SvgPicture.asset('assets/icons/Filter.svg'),
+            ),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide.none)),
       ),
     );
   }
